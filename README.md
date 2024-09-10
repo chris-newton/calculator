@@ -2,4 +2,6 @@
 
 ![calc screenshot](https://github.com/chris-newton/calculator/blob/main/calc.PNG)
 
-Odin foundations project 5
+Odin Project Foundations: project 5
+
+[website](https://chris-newton.github.io/calculator/)
