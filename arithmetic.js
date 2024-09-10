@@ -11,6 +11,9 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
+    if (b === 0) {
+        return "You and I both know you can't do that";
+    }
     return a / b;
 }
 
@@ -20,6 +23,10 @@ function operate(a, b, operator) {
 
 // given a new digit, updates and returns currValue
 function updateDisplayValue(newDigit) {
+    if (!currValue) {
+        currValue = 0;
+    }
+    
     if (currValue === 0) {
         currValue = newDigit;
         return currValue; 
@@ -71,7 +78,7 @@ operationButtons.forEach((button) => {
 
         const operationText = button.textContent;
         a = currValue;
-        currValue = 0;
+        currValue = undefined;
         
         switch (operationText) {
             case "+":
@@ -96,6 +103,9 @@ operationButtons.forEach((button) => {
 
 // sets the second value (b) and executes operation
 equalsButton.addEventListener("click", () => {
+    if (!currValue) {
+        return;
+    }
 
     b = currValue;
     currValue = operator(a, b)
