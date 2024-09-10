@@ -55,14 +55,27 @@ button:active {
 }
 
 .zero-button {
-    
+    flex-shrink: 0.06;
 }
 
+.operation-button {
+    background-color: rgba(228, 159, 56, 0.986);
+}
+
+.operation-button:active {
+    background-color: rgba(179, 126, 48, 0.986);
+}
+
+.clear-button {
+    width: 380px;
+}
 .display {
     background-color: white;
     height: fit-content;
     width: 300%;
     padding: 10px; 
     border-radius: 10px;
-    margin: auto 
+    margin: auto; 
+    flex-grow: 0;
+    
 }

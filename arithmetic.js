@@ -10,9 +10,9 @@ function multiply(a, b) {
     return a * b;
 }
 
-function divide(a, b) {
+function divide(a, b) {    
     if (b === 0) {
-        return "You and I both know you can't do that";
+        return "no.";
     }
     return a / b;
 }
@@ -64,16 +64,14 @@ numberButtons.forEach((button) => {
     });
 });
 
-clearButton.addEventListener("click", () => {
-    clear();
-});
+clearButton.addEventListener("click", clear);
 
 // Once operator is clicked, we know the end of our first value (a), so
 // we set it immediately
 operationButtons.forEach((button) => {
     button.addEventListener("click", () => {
-        if (operator) {
-            return;
+        if (operator) { 
+            return; // prevents multiple consecutive operator inputs
         }
 
         const operationText = button.textContent;
@@ -103,8 +101,9 @@ operationButtons.forEach((button) => {
 
 // sets the second value (b) and executes operation
 equalsButton.addEventListener("click", () => {
-    if (!currValue) {
-        return;
+    // when equals is pressed with no operator, just evaluate to curr value
+    if (operator === undefined) {
+        return; 
     }
 
     b = currValue;
