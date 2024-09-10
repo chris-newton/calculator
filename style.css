@@ -17,7 +17,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    background: rgb(212, 228, 222);
+    background-image: linear-gradient( rgb(86, 98, 124),rgb(147, 194, 184));
     padding: 16px;
     border-radius: 10px;
 }
@@ -41,19 +41,21 @@ body {
 }
 
 button {
-    height: 50%;
+    height: 60%;
     width: 50%;
     padding: 10px;
     border-radius: 10px;
     border: none;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 button:active {
-    background-color: rgb(212, 212, 212);
+    background-color: rgb(184, 184, 184);
 }
 
 .zero-button {
-    flex: 2 1 1;
+    
 }
 
 .display {
